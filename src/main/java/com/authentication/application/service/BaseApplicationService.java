@@ -14,4 +14,8 @@ public interface BaseApplicationService <T, ID> {
     void deleteById(ID id);
 
     List<T> filterPagination(int pageNumber, int pageSize, String sortField, String sortDirection);
+
+    T update(ID id, T entity);
+
+    
 }

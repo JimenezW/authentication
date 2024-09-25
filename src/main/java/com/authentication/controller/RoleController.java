@@ -37,4 +37,9 @@ public class RoleController {
     public void deleteRole(@PathVariable Long id) {
         roleService.deleteById(id);
     }
+
+    @PutMapping
+    public void updateRole(@RequestParam(required = true) Long id, @RequestBody RoleDTO role){
+        roleService.update(id, role);
+    }
 }

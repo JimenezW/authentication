@@ -46,6 +46,15 @@ public abstract class BaseApplicationServiceImpl<T, DTO, ID> implements BaseAppl
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public DTO update(ID id, DTO dto) {
+
+        T entity = mapDtoToEntity(dto);
+        T updatedEntity = domainService.update(id, entity);
+
+        return mapEntityToDto(updatedEntity);
+    }
+
     // Métodos abstractos para mapear DTO <-> Entidad
     protected abstract T mapDtoToEntity(DTO dto);
 
