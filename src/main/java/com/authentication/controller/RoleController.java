@@ -2,7 +2,6 @@ package com.authentication.controller;
 
 import com.authentication.application.dto.RoleDTO;
 import com.authentication.application.service.RoleApplicationService;
-import com.authentication.application.service.RoleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,4 +41,18 @@ public class RoleController {
     public void updateRole(@RequestParam(required = true) Long id, @RequestBody RoleDTO role){
         roleService.update(id, role);
     }
+
+    // Endpoint de paginación con filtro
+    @GetMapping("/paginated")
+    public ResponseEntity<List<RoleDTO>> getPaginatedRoles(
+            @RequestParam(defaultValue = "0") int pageNumber,
+            @RequestParam(defaultValue = "10") int pageSize,
+            @RequestParam(defaultValue = "id") String sortField,
+            @RequestParam(defaultValue = "asc") String sortDirection) {
+
+        // Invocamos el servicio de aplicación para obtener la lista paginada
+        List<RoleDTO> roles = roleService.filterPagination(pageNumber, pageSize, sortField, sortDirection);
+        return ResponseEntity.ok(roles);
+    }
+
 }
