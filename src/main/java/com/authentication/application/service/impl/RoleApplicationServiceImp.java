@@ -1,7 +1,6 @@
 package com.authentication.application.service.impl;
 
 import com.authentication.application.dto.RoleDTO;
-import com.authentication.application.service.BaseApplicationService;
 import com.authentication.application.service.RoleApplicationService;
 import com.authentication.domain.model.Role;
 import com.authentication.domain.service.RoleRepoService;
