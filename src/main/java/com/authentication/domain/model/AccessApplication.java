@@ -13,7 +13,7 @@ public class AccessApplication extends BaseEntity {
     @Column(name = "clave", nullable = false, unique = true)
     private String clave;
 
-    @Column(name = "application_id", nullable = false)
+    @Column(name = "applicationId", nullable = false)
     private Long applicationId; // Este campo es para el Foreign Key
 
     @Column(name = "title", nullable = false)
@@ -23,7 +23,7 @@ public class AccessApplication extends BaseEntity {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "application_id", referencedColumnName = "id", insertable = false, updatable = false)
-    private Application application;
+    @JoinColumn(name = "applicationId", referencedColumnName = "id", insertable = false, updatable = false)
+    private ApplicationM application;
 
 }
