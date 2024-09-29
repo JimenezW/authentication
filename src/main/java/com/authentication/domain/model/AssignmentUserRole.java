@@ -20,7 +20,5 @@ public class AssignmentUserRole extends  BaseEntity{
     @JoinColumn(name = "roleId", referencedColumnName = "id", insertable = false, updatable = false)
     private ApplicationM application;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "applicationId", referencedColumnName = "id", insertable = false, updatable = false)
-    private ApplicationM application;
+
 }
