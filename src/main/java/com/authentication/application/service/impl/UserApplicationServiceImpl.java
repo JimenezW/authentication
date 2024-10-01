@@ -8,13 +8,13 @@ import com.authentication.domain.service.UserDomainService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserApplicationServiceImpl extends BaseApplicationServiceImpl<User, UserDTO, Long>, UserApplicationService {
+public class UserApplicationServiceImpl extends BaseApplicationServiceImpl<User, UserDTO, Long> implements UserApplicationService {
 
     protected final UserDomainService userDomainService;
 
     public UserApplicationServiceImpl(UserDomainService domainService){
         super(domainService);
-        userDomainService = domainService;
+        this.userDomainService = domainService;
     }
 
     @Override
