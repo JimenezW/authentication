@@ -21,11 +21,12 @@ public abstract class BaseEntity {
     private LocalDateTime updateDate = LocalDateTime.now();
 
     @Column(name = "active", nullable = false)
-    private boolean active = true;
+    private boolean active = false;
 
     @PrePersist
     protected void onCreate() {
         createDate = LocalDateTime.now();
+        active = true;
     }
 
     @PreUpdate
