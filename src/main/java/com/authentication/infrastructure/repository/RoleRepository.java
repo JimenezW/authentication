@@ -1,10 +1,8 @@
 package com.authentication.infrastructure.repository;
 
-import com.authentication.domain.repository.RoleRepositoryCustom;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import com.authentication.domain.model.Role;
+import com.authentication.domain.repository.BaseRepository;
 
-@Repository
-public interface RoleRepository extends JpaRepository<Role, Long>, RoleRepositoryCustom {
+public interface RoleRepository extends BaseRepository<Role, Long> {
+
 }

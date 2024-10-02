@@ -1,6 +1,6 @@
 package com.authentication.domain.repository;
 
-import com.authentication.domain.model.ApplicationM;
+import com.authentication.domain.model.Application;
 
-public interface ApplicationRepositoryCustom extends BaseRepository<ApplicationM, Long>{
+public interface ApplicationRepositoryCustom extends BaseRepository<Application, Long>{
 }

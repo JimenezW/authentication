@@ -1,6 +1,6 @@
 package com.authentication.domain.service;
 
-import com.authentication.domain.model.ApplicationM;
+import com.authentication.domain.model.Application;
 
-public interface ApplicationDomainService extends BaseRepoService<ApplicationM, Long>{
+public interface ApplicationDomainService extends BaseRepoService<Application, Long>{
 }

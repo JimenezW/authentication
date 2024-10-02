@@ -3,6 +3,7 @@ package com.authentication.configuration;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 
 import javax.sql.DataSource;
@@ -13,8 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Configuration
-public class DatabaseConfig {
-    private static final Logger logger = LoggerFactory.getLogger(DatabaseConfig.class);
+@Profile("mysql")
+public class MySQLConfig {
+    private static final Logger logger = LoggerFactory.getLogger(MySQLConfig.class);
 
     @Autowired
     private DataSource dataSource;

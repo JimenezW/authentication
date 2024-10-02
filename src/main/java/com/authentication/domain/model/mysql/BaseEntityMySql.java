@@ -1,5 +1,6 @@
-package com.authentication.domain.model;
+package com.authentication.domain.model.mysql;
 
+import com.authentication.domain.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class BaseEntity {
+public class BaseEntityMySql extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,13 +25,12 @@ public abstract class BaseEntity {
     private boolean active = false;
 
     @PrePersist
-    protected void onCreate() {
-        createDate = LocalDateTime.now();
-        active = true;
+    protected void onCreateMySQL() {
+        super.onCreate();
     }
 
     @PreUpdate
-    protected void onUpdate() {
-        updateDate = LocalDateTime.now();
+    protected void onUpdateMySQL() {
+        super.onUpdate();
     }
 }

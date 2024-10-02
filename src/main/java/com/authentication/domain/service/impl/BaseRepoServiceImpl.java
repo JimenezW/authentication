@@ -1,7 +1,7 @@
 package com.authentication.domain.service.impl;
 
 import com.authentication.common.utils.ObjectCopier;
-import com.authentication.domain.model.BaseEntity;
+import com.authentication.domain.model.BaseModel;
 import com.authentication.domain.service.BaseRepoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.data.domain.PageRequest;
@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseRepoServiceImpl<T extends BaseEntity, ID> implements BaseRepoService<T, ID> {
+public abstract class BaseRepoServiceImpl<T extends BaseModel, ID> implements BaseRepoService<T, ID> {
     protected final JpaRepository<T, ID> repository;
 
     public BaseRepoServiceImpl(JpaRepository<T, ID> repository) {

@@ -1,4 +1,4 @@
-package com.authentication.domain.model;
+package com.authentication.domain.model.mysql;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +10,8 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "Application")
-public class ApplicationM extends BaseEntity{
+public class ApplicationMySql extends BaseEntityMySql {
+
     @Column(name = "clave", nullable = false, unique = true)
     private String clave;
 

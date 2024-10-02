@@ -5,10 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Permission extends BaseModel {
+public class Application extends BaseModel {
 
     private String clave;
 
     private String description;
-
 }
