@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccessRoleDomainServiceImpl extends BaseRepoServiceImpl<AccessRole, Long> implements AccessRoleDomainService {
-    protected final jpaAccessRoleMySql accessRoleRepository;
+    protected final AccessRoleRepository accessRoleRepository;
 
     public AccessRoleDomainServiceImpl(jpaAccessRoleMySql repository){
         super(repository);
